@@ -15,10 +15,10 @@ In [Azure Container Apps Java Microservice quickstart](https://learn.microsoft.c
 
 4. Go to your forked `azure-container-apps-java-samples` repository, navigate to the `GitHub Actions` tab, choose `Publish Petclinic images` workflow, and click `Run workflow`, then fill in the repository url of Spring Pet clinic microservices with your forked Petclinic repository url. The image tag version is optional for your customized images, you can leave it empty to use the default value `latest`.
 
-   :::image type="content" source="resources/build-your-own-images.png" alt-text="Screenshot of build customized images.":::
+![](resources/build-your-own-images.png)
 
 5. After the workflow finished, go to the `Code` tab of your `azure-container-apps-java-samples` repository, click the `Packages` button at the right bottom corner to see the built images.
 
-   :::image type="content" source="resources/github-package-button.png" alt-text="Screenshot of GitHub packages.":::
+![](resources/github-package-button.png)
 
 6. There should be four packages in the list, one for each of the Java microservice apps. Click on the package name to see the details of the package. Update or create your container apps with these images as how [Azure Container Apps Java Microservice quickstart](https://learn.microsoft.com/azure/container-apps/java-microservice-get-started) does.  
