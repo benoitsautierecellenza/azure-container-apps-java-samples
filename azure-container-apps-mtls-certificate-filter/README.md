@@ -1,6 +1,6 @@
 # Build an mTLS application in Azure Container Apps
 
-This project demonstrates how to run a Java application In Azure Container Apps (ACA) to receive mTLS handshake certificates and validate. It is the supplementary sample of the Microsoft document [Building a Secure mTLS Java Application in Azure Container Apps]().
+This project demonstrates how to run a Java application In Azure Container Apps (ACA) to receive mTLS handshake certificates and validate. It is the supplementary sample of the Microsoft document [Building a Secure mTLS Java Application in Azure Container Apps](https://review.learn.microsoft.com/en-us/azure/container-apps/java-mtls?branch=pr-en-us-291193).
 
 In this project, the applications act as an mTLS server to extract X.509 certificates from incoming HTTP request header, and show an example of validating the certificates using the server application's own trust store, which should be customized according to your own business logic.
 
@@ -123,7 +123,7 @@ Run the command below to build your app and deploy to Azure Container Apps, and 
 
 ### Configure your container app to require client certificates
 
-Please refer to the document [Building a Secure mTLS Java Application in Azure Container Apps]() to configure your container app to require client certificates.
+Please refer to the document [Building a Secure mTLS Java Application in Azure Container Apps](https://review.learn.microsoft.com/en-us/azure/container-apps/java-mtls?branch=pr-en-us-291193) to configure your container app to require client certificates.
 
 ### Test the application
 
