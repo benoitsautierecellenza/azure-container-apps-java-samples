@@ -41,7 +41,7 @@ The following sections provide detailed steps for each of the above operations a
 
 ### Prepare a trust store and certificates for testing
 
-In this section, we will prepare a trusted CA certificate store and the client certificates which can be verified by one of the CA certificate in the store. In production use case, the trusted CA certificates and the client certificates are likely to be provided by some authority. Here, for demonstration, we will use OpenSSL to generate the certificates, which should be used in development environment only. The below operations use the [openssl](https://wiki.openssl.org/index.php/Binaries) library, so your need to have it installed prior to following the next step.
+In this section, we will prepare a trusted CA certificate store and the client certificates which can be verified by one of the CA certificate in the store. In production use case, the trusted CA certificates and the client certificates are likely to be provided by some authority. **Here, for demonstration, we will use OpenSSL to generate the certificates, which should be used in development environment only.** The below operations use the [openssl](https://wiki.openssl.org/index.php/Binaries) library, so your need to have it installed prior to following the next step.
 
 1. Step into the module you want to test, and generate a root CA certificate and key:
 

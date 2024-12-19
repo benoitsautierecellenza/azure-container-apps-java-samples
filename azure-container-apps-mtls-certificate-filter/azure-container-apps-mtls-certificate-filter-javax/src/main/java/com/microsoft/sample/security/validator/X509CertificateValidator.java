@@ -42,22 +42,29 @@ public class X509CertificateValidator {
         }
     }
 
+    /**
+     * Validates the provided X.509 certificate chain.
+     *
+     * This method performs the following checks:
+     * 1. Ensures the certificate chain is not empty.
+     * 2. Validates that the subject DN of the first certificate ends with "@contoso.com".
+     * 3. Validates that the issuer DN of the first certificate ends with "@contoso.com".
+     * 4. Uses the trust manager to check the server's certificate chain.
+     *
+     * Note: This is a basic reference implementation. Customers need to modify the logic according to their specific requirements.
+     */
     public void validate(X509Certificate[] certificateChain) throws CertificateException {
         if (certificateChain == null || certificateChain.length == 0) {
             throw new CertificateException("Certificate chain is empty");
         }
         X509Certificate certificate = certificateChain[0];
         String subjectDN = certificate.getSubjectX500Principal().getName();
-        if (!subjectDN.endsWith("@domain.suffix")) {
+        if (!subjectDN.endsWith("@contoso.com")) {
             throw new CertificateException("Certificate CN does not match expected value");
         }
         String issuerDN = certificate.getIssuerX500Principal().getName();
-        if (!issuerDN.contains("CN=expectedIssuerCN")) {
+        if (!issuerDN.endsWith("@contoso.com")) {
             throw new CertificateException("Certificate issuer CN does not match expected value");
-        }
-        Collection<List<?>> sanList = certificate.getSubjectAlternativeNames();
-        if (sanList == null || sanList.stream().noneMatch(san -> san.contains("expectedSAN"))) {
-            throw new CertificateException("Certificate SAN does not match expected value");
         }
         this.trustManager.checkServerTrusted(certificateChain, "RSA");
     }
