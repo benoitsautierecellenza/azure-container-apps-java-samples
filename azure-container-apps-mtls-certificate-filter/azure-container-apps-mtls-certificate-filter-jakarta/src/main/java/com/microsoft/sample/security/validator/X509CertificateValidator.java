@@ -48,7 +48,7 @@ public class X509CertificateValidator {
         }
         X509Certificate certificate = certificateChain[0];
         String subjectDN = certificate.getSubjectX500Principal().getName();
-        if (!subjectDN.contains("CN=expectedCN")) {
+        if (!subjectDN.endsWith("@domain.suffix")) {
             throw new CertificateException("Certificate CN does not match expected value");
         }
         String issuerDN = certificate.getIssuerX500Principal().getName();
